@@ -1,14 +1,22 @@
 function spli2rd() 
 {
-    var txtobj = document.getElementById('input')
-    var txt = txtobj.value
-    var txtfinal = ' '
+    var txt = document.getElementById('input').value
+    var txtfinal = ''
+    var res = document.getElementById('res')
+    res.innerHTML = ''
 
-    for (var i = 0; i < txt.length; i++) 
+    for (let i = 0; i < txt.length; i++) 
     {
-        txtfinal += (txt.charAt(i)).toUpperCase()
-        txtfinal += ' '
+        if (txt.charAt(i) == ' ')
+        {
+            txtfinal += '  '
+        }
+        else
+        {
+            txtfinal += txt.charAt(i).toUpperCase()
+            txtfinal += ' ' 
+        }
     }
 
-    document.getElementById('res').innerHTML = txtfinal
+    res.innerHTML = txtfinal
 }
